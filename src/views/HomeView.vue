@@ -131,6 +131,7 @@ export default {
   width: calc(100vw - 64px - 4rem);
   padding-block: 20px;
   color: inherit;
+  font-size: 16px;
 }
 
 #search:focus,
@@ -153,6 +154,7 @@ select {
   width: 100%;
   height: 100%;
   color: inherit;
+  font-size: 16px;
 }
 
 .country-list {
