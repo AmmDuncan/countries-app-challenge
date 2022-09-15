@@ -1,12 +1,12 @@
 <template>
   <NavBar></NavBar>
-  <router-view/>
+  <router-view />
 </template>
 <script>
 import NavBar from "@/components/NavBar";
 
 export default {
-  components: {NavBar}
+  components: { NavBar }
 }
 </script>
 
@@ -22,6 +22,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  background: var(--color-flat);
 }
 
 body.dark {
