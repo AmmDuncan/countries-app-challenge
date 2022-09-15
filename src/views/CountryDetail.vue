@@ -69,6 +69,8 @@
                     @click="goToCountry(countryCode[code])">
                 {{ countryCode[code] }}
               </span>
+              <span v-if="!country.borders || country.borders.length === 0"
+                    style="font-weight: 800">No border countries</span>
             </span>
           </div>
         </div>
@@ -189,12 +191,6 @@ h1 {
   gap: 8px;
 }
 
-@media (min-width: 768px) {
-  .content {
-    max-width: 600px;
-    margin-inline: auto;
-  }
-}
 
 .borders {
   margin-top: 48px;
@@ -211,16 +207,26 @@ h1 {
   scale: 1.025;
 }
 
+
+@media (min-width: 576px) {
+  .other-details {
+    display: grid;
+    grid: repeat(5, max-content) / auto-flow 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 992px) {
   .content {
     grid: 1fr / 1fr 1fr;
     gap: 4rem;
-    max-width: max-content;
-  }
-
-  .other-details {
-    display: grid;
-    grid: repeat(5, max-content) / auto-flow 1fr;
+    max-width: 100%;
   }
 }
 </style>
