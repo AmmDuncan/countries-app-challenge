@@ -5,7 +5,7 @@
         <router-link to="/" class="home-link">Where in the world?</router-link>
         <div class="controls">
           <button class="theme-switch" @click="isDark = !isDark">
-            <v-icon name="bi-moon-fill" animation="pulse" scale="0.9"></v-icon>
+            <v-icon name="bi-moon-fill" animation="pulse" scale="1"></v-icon>
             Dark Mode
           </button>
         </div>
@@ -56,12 +56,16 @@ export default {
 
 .theme-switch {
   padding: 8px 16px;
-  margin-inline-end: -16px;
   borer-radius: 8px;
   border: none;
   cursor: pointer;
   background: transparent;
   color: inherit;
+  display: grid;
+  grid: 1fr / repeat(2, max-content);
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
 }
 
 .theme-switch:hover {
