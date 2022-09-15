@@ -6,7 +6,7 @@
           <div class="icon">
             <v-icon name="oi-search" scale="1.25"></v-icon>
           </div>
-          <input v-model="search" type="search" name="search" id="search" placeholder="Search for a country...">
+          <input v-model="search" type="text" name="search" id="search" placeholder="Search for a country...">
         </div>
         <div class="filter elevated rounded">
           <select v-model="region">
