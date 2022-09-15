@@ -93,8 +93,8 @@ export default {
     }
   },
   mounted() {
-    this.search = this.s;
-    this.region = this.r;
+    if (this.s) this.search = this.s;
+    if (this.r) this.region = this.r;
     this.fetchData();
   }
 }
