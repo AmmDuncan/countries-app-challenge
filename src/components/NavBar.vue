@@ -5,7 +5,7 @@
         <router-link to="/" class="home-link">Where in the world?</router-link>
         <div class="controls">
           <button class="theme-switch" @click="isDark = !isDark">
-            <v-icon name="bi-moon-fill" animation="pulse" scale="1"></v-icon>
+            <v-icon name="bi-moon-fill" animation="pulse" scale="0.9"></v-icon>
             Dark Mode
           </button>
         </div>
@@ -18,7 +18,7 @@
 
 export default {
   name: "NavBar",
-  data: () => ({isDark: false}),
+  data: () => ({ isDark: false }),
   watch: {
     isDark(newValue) {
       localStorage.setItem('country-app-dark', newValue);
@@ -65,7 +65,7 @@ export default {
   grid: 1fr / repeat(2, max-content);
   gap: 8px;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .theme-switch:hover {
