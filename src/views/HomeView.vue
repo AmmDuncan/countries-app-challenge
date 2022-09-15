@@ -54,7 +54,7 @@ import {debounce} from "@/utils/debounce";
 export default {
   name: 'HomeView',
   components: {LoadingState},
-  props: ['s'],
+  props: ['s', 'r'],
   data: () => ({
     filters: [
       {show: "Africa", value: "africa"},
@@ -79,16 +79,22 @@ export default {
     }
   },
   watch: {
-    region() {
+    region(newValue) {
       this.fetchData()
+      // spread current query to keep them in the url
+      const currentQuery = this.$route.query;
+      this.$router.push({query: {...currentQuery, r: newValue}})
+
     },
     search(newValue) {
       debounce(this.fetchData, 500)
-      this.$router.replace({query: {s: newValue}})
+      const currentQuery = this.$route.query;
+      this.$router.replace({query: {...currentQuery, s: newValue}})
     }
   },
   mounted() {
     this.search = this.s;
+    this.region = this.r;
     this.fetchData();
   }
 }
@@ -154,7 +160,7 @@ select {
   grid: auto-flow / repeat(auto-fit, minmax(240px, 272px));
   justify-content: center;
   gap: 48px;
-  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 
 img {
